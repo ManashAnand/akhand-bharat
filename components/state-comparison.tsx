@@ -12,8 +12,27 @@ import { cn } from "@/lib/utils"
 import { Button } from "./ui/button"
 import { stateData, languageData, socialData, comparisonTypes } from "@/data/cultureData"
 
+// TypeScript interfaces for our data types
+interface StateData {
+  icon: string;
+  name: string;
+  [key: string]: unknown; // For any additional properties
+}
+
+interface LanguageData {
+  icon: string;
+  name: string;
+  [key: string]: unknown; // For any additional properties
+}
+
+interface SocialData {
+  icon: string;
+  name: string;
+  [key: string]: unknown; // For any additional properties
+}
+
 // Card components for displaying comparison results
-const StateCard = ({ state }: { state: any }) => (
+const StateCard = ({ state }: { state: StateData }) => (
   <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden border border-blue-200 dark:border-blue-800">
     <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-6 flex items-center gap-4">
       <div className="bg-white dark:bg-slate-800 w-16 h-16 rounded-full flex items-center justify-center text-3xl">
@@ -37,7 +56,7 @@ const StateCard = ({ state }: { state: any }) => (
   </div>
 )
 
-const LanguageCard = ({ language }: { language: any }) => (
+const LanguageCard = ({ language }: { language: LanguageData }) => (
   <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden border border-indigo-200 dark:border-indigo-800">
     <div className="bg-gradient-to-r from-blue-500 to-indigo-500 p-6 flex items-center gap-4">
       <div className="bg-white dark:bg-slate-800 w-16 h-16 rounded-full flex items-center justify-center text-3xl">
@@ -61,7 +80,7 @@ const LanguageCard = ({ language }: { language: any }) => (
   </div>
 )
 
-const SocialCard = ({ social }: { social: any }) => (
+const SocialCard = ({ social }: { social: SocialData }) => (
   <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden border border-green-200 dark:border-green-800">
     <div className="bg-gradient-to-r from-green-500 to-teal-500 p-6 flex items-center gap-4">
       <div className="bg-white dark:bg-slate-800 w-16 h-16 rounded-full flex items-center justify-center text-3xl">
@@ -620,8 +639,8 @@ export default function StateComparison() {
             <div
               className="grid grid-cols-1 md:grid-cols-2 gap-6 opacity-100 transform translate-y-0 transition-all duration-500"
             >
-              <StateCard state={stateData[firstState]} />
-              <StateCard state={stateData[secondState]} />
+              <StateCard state={stateData[firstState] as StateData} />
+              <StateCard state={stateData[secondState] as StateData} />
             </div>
           )}
 
@@ -629,8 +648,8 @@ export default function StateComparison() {
             <div
               className="grid grid-cols-1 md:grid-cols-2 gap-6 opacity-100 transform translate-y-0 transition-all duration-500"
             >
-              <LanguageCard language={languageData[firstLanguage]} />
-              <LanguageCard language={languageData[secondLanguage]} />
+              <LanguageCard language={languageData[firstLanguage] as LanguageData} />
+              <LanguageCard language={languageData[secondLanguage] as LanguageData} />
             </div>
           )}
 
@@ -638,8 +657,8 @@ export default function StateComparison() {
             <div
               className="grid grid-cols-1 md:grid-cols-2 gap-6 opacity-100 transform translate-y-0 transition-all duration-500"
             >
-              <SocialCard social={socialData[firstSocial]} />
-              <SocialCard social={socialData[secondSocial]} />
+              <SocialCard social={socialData[firstSocial] as SocialData} />
+              <SocialCard social={socialData[secondSocial] as SocialData} />
             </div>
           )}
 
