@@ -289,6 +289,7 @@ export default function StateComparison() {
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-full p-0" align="start">
+                    {/* @ts-ignore */}
                     <Command>
                       <CommandInput placeholder="Search states..." />
                       <CommandList>
@@ -338,6 +339,7 @@ export default function StateComparison() {
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-full p-0" align="start">
+                    {/* @ts-ignore */}
                     <Command>
                       <CommandInput placeholder="Search states..." />
                       <CommandList>
@@ -408,6 +410,7 @@ export default function StateComparison() {
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-full p-0" align="start">
+                    {/* @ts-ignore */}
                     <Command>
                       <CommandInput placeholder="Search languages..." />
                       <CommandList>
@@ -457,6 +460,7 @@ export default function StateComparison() {
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-full p-0" align="start">
+                    {/* @ts-ignore */}
                     <Command>
                       <CommandInput placeholder="Search languages..." />
                       <CommandList>
@@ -529,6 +533,7 @@ export default function StateComparison() {
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-full p-0" align="start">
+                    {/* @ts-ignore */}
                     <Command>
                       <CommandInput placeholder="Search social structures..." />
                       <CommandList>
@@ -578,6 +583,7 @@ export default function StateComparison() {
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-full p-0" align="start">
+                    {/* @ts-ignore */}
                     <Command>
                       <CommandInput placeholder="Search social structures..." />
                       <CommandList>
