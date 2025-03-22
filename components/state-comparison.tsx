@@ -289,6 +289,7 @@ export default function StateComparison() {
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-full p-0" align="start">
+                    {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
                     {/* @ts-ignore */}
                     <Command>
                       <CommandInput placeholder="Search states..." />
@@ -339,6 +340,7 @@ export default function StateComparison() {
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-full p-0" align="start">
+                    {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
                     {/* @ts-ignore */}
                     <Command>
                       <CommandInput placeholder="Search states..." />
@@ -410,6 +412,7 @@ export default function StateComparison() {
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-full p-0" align="start">
+                    {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
                     {/* @ts-ignore */}
                     <Command>
                       <CommandInput placeholder="Search languages..." />
@@ -460,6 +463,7 @@ export default function StateComparison() {
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-full p-0" align="start">
+                    {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
                     {/* @ts-ignore */}
                     <Command>
                       <CommandInput placeholder="Search languages..." />
@@ -533,6 +537,7 @@ export default function StateComparison() {
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-full p-0" align="start">
+                    {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
                     {/* @ts-ignore */}
                     <Command>
                       <CommandInput placeholder="Search social structures..." />
@@ -583,6 +588,7 @@ export default function StateComparison() {
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-full p-0" align="start">
+                    {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
                     {/* @ts-ignore */}
                     <Command>
                       <CommandInput placeholder="Search social structures..." />
