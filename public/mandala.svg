@@ -1,0 +1,18 @@
+<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g opacity="0.8">
+    <circle cx="300" cy="300" r="280" stroke="currentColor" stroke-width="2" stroke-dasharray="8 8"/>
+    <circle cx="300" cy="300" r="240" stroke="currentColor" stroke-width="2" stroke-dasharray="8 8"/>
+    <circle cx="300" cy="300" r="200" stroke="currentColor" stroke-width="2" stroke-dasharray="8 8"/>
+    <circle cx="300" cy="300" r="160" stroke="currentColor" stroke-width="2" stroke-dasharray="8 8"/>
+    <circle cx="300" cy="300" r="120" stroke="currentColor" stroke-width="2" stroke-dasharray="8 8"/>
+    <circle cx="300" cy="300" r="80" stroke="currentColor" stroke-width="2" stroke-dasharray="8 8"/>
+    <circle cx="300" cy="300" r="40" stroke="currentColor" stroke-width="2" stroke-dasharray="8 8"/>
+    
+    <line x1="300" y1="20" x2="300" y2="580" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4"/>
+    <line x1="20" y1="300" x2="580" y2="300" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4"/>
+    
+    <line x1="86" y1="86" x2="514" y2="514" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4"/>
+    <line x1="86" y1="514" x2="514" y2="86" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4"/>
+  </g>
+</svg>
+
