@@ -8,6 +8,15 @@ import { Search } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 
+// Create a type assertion to fix the component compatibility issue
+type CommandType = React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<React.ComponentPropsWithoutRef<typeof CommandPrimitive>> & 
+  React.RefAttributes<React.ElementRef<typeof CommandPrimitive>>
+> & {
+  // Include the displayName property
+  displayName?: string
+}
+
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive>
@@ -20,7 +29,8 @@ const Command = React.forwardRef<
     )}
     {...props}
   />
-))
+)) as CommandType // Type assertion to match JSX requirements
+
 Command.displayName = CommandPrimitive.displayName
 
 const CommandDialog = ({ children, ...props }: DialogProps) => {
@@ -33,6 +43,49 @@ const CommandDialog = ({ children, ...props }: DialogProps) => {
       </DialogContent>
     </Dialog>
   )
+}
+
+// Type definitions for all command components
+type CommandInputType = React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>> & 
+  React.RefAttributes<React.ElementRef<typeof CommandPrimitive.Input>>
+> & {
+  displayName?: string
+}
+
+type CommandListType = React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<React.ComponentPropsWithoutRef<typeof CommandPrimitive.List>> & 
+  React.RefAttributes<React.ElementRef<typeof CommandPrimitive.List>>
+> & {
+  displayName?: string
+}
+
+type CommandEmptyType = React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<React.ComponentPropsWithoutRef<typeof CommandPrimitive.Empty>> & 
+  React.RefAttributes<React.ElementRef<typeof CommandPrimitive.Empty>>
+> & {
+  displayName?: string
+}
+
+type CommandGroupType = React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<React.ComponentPropsWithoutRef<typeof CommandPrimitive.Group>> & 
+  React.RefAttributes<React.ElementRef<typeof CommandPrimitive.Group>>
+> & {
+  displayName?: string
+}
+
+type CommandSeparatorType = React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<React.ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>> & 
+  React.RefAttributes<React.ElementRef<typeof CommandPrimitive.Separator>>
+> & {
+  displayName?: string
+}
+
+type CommandItemType = React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<React.ComponentPropsWithoutRef<typeof CommandPrimitive.Item>> & 
+  React.RefAttributes<React.ElementRef<typeof CommandPrimitive.Item>>
+> & {
+  displayName?: string
 }
 
 const CommandInput = React.forwardRef<
@@ -50,7 +103,7 @@ const CommandInput = React.forwardRef<
       {...props}
     />
   </div>
-))
+)) as CommandInputType
 
 CommandInput.displayName = CommandPrimitive.Input.displayName
 
@@ -63,7 +116,7 @@ const CommandList = React.forwardRef<
     className={cn("max-h-[300px] overflow-y-auto overflow-x-hidden", className)}
     {...props}
   />
-))
+)) as CommandListType
 
 CommandList.displayName = CommandPrimitive.List.displayName
 
@@ -76,7 +129,7 @@ const CommandEmpty = React.forwardRef<
     className="py-6 text-center text-sm"
     {...props}
   />
-))
+)) as CommandEmptyType
 
 CommandEmpty.displayName = CommandPrimitive.Empty.displayName
 
@@ -92,7 +145,7 @@ const CommandGroup = React.forwardRef<
     )}
     {...props}
   />
-))
+)) as CommandGroupType
 
 CommandGroup.displayName = CommandPrimitive.Group.displayName
 
@@ -105,7 +158,8 @@ const CommandSeparator = React.forwardRef<
     className={cn("-mx-1 h-px bg-border", className)}
     {...props}
   />
-))
+)) as CommandSeparatorType
+
 CommandSeparator.displayName = CommandPrimitive.Separator.displayName
 
 const CommandItem = React.forwardRef<
@@ -120,7 +174,7 @@ const CommandItem = React.forwardRef<
     )}
     {...props}
   />
-))
+)) as CommandItemType
 
 CommandItem.displayName = CommandPrimitive.Item.displayName
 

@@ -290,35 +290,32 @@ export default function StateComparison() {
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-full p-0" align="start">
-                    {(Command as any) && (
-                      <Command as any>
-                        <CommandInput as any placeholder="Search states..." />
-                        <CommandList as any>
-                          <CommandEmpty as any>No state found.</CommandEmpty>
-                          <CommandGroup as any>
-                            {Object.entries(stateData).map(([key, state]) => (
-                              <CommandItem
-                                as any
-                                key={key}
-                                value={key}
-                                onSelect={(currentValue) => {
-                                  setFirstState(currentValue)
-                                  setShowComparison(false)
-                                }}
-                              >
-                                <div className="flex items-center gap-3">
-                                  <span className="text-2xl">{state.icon}</span>
-                                  <span>{state.name}</span>
-                                </div>
-                                <Check
-                                  className={cn("ml-auto h-4 w-4", firstState === key ? "opacity-100" : "opacity-0")}
-                                />
-                              </CommandItem>
-                            ))}
-                          </CommandGroup>
-                        </CommandList>
-                      </Command>
-                    )}
+                    <Command>
+                      <CommandInput placeholder="Search states..." />
+                      <CommandList>
+                        <CommandEmpty>No state found.</CommandEmpty>
+                        <CommandGroup>
+                          {Object.entries(stateData).map(([key, state]) => (
+                            <CommandItem
+                              key={key}
+                              value={key}
+                              onSelect={(currentValue) => {
+                                setFirstState(currentValue)
+                                setShowComparison(false)
+                              }}
+                            >
+                              <div className="flex items-center gap-3">
+                                <span className="text-2xl">{state.icon}</span>
+                                <span>{state.name}</span>
+                              </div>
+                              <Check
+                                className={cn("ml-auto h-4 w-4", firstState === key ? "opacity-100" : "opacity-0")}
+                              />
+                            </CommandItem>
+                          ))}
+                        </CommandGroup>
+                      </CommandList>
+                    </Command>
                   </PopoverContent>
                 </Popover>
               </div>
@@ -342,35 +339,32 @@ export default function StateComparison() {
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-full p-0" align="start">
-                    {(Command as any) && (
-                      <Command as any>
-                        <CommandInput as any placeholder="Search states..." />
-                        <CommandList as any>
-                          <CommandEmpty as any>No state found.</CommandEmpty>
-                          <CommandGroup as any>
-                            {Object.entries(stateData).map(([key, state]) => (
-                              <CommandItem
-                                as any
-                                key={key}
-                                value={key}
-                                onSelect={(currentValue) => {
-                                  setSecondState(currentValue)
-                                  setShowComparison(false)
-                                }}
-                              >
-                                <div className="flex items-center gap-3">
-                                  <span className="text-2xl">{state.icon}</span>
-                                  <span>{state.name}</span>
-                                </div>
-                                <Check
-                                  className={cn("ml-auto h-4 w-4", secondState === key ? "opacity-100" : "opacity-0")}
-                                />
-                              </CommandItem>
-                            ))}
-                          </CommandGroup>
-                        </CommandList>
-                      </Command>
-                    )}
+                    <Command>
+                      <CommandInput placeholder="Search states..." />
+                      <CommandList>
+                        <CommandEmpty>No state found.</CommandEmpty>
+                        <CommandGroup>
+                          {Object.entries(stateData).map(([key, state]) => (
+                            <CommandItem
+                              key={key}
+                              value={key}
+                              onSelect={(currentValue) => {
+                                setSecondState(currentValue)
+                                setShowComparison(false)
+                              }}
+                            >
+                              <div className="flex items-center gap-3">
+                                <span className="text-2xl">{state.icon}</span>
+                                <span>{state.name}</span>
+                              </div>
+                              <Check
+                                className={cn("ml-auto h-4 w-4", secondState === key ? "opacity-100" : "opacity-0")}
+                              />
+                            </CommandItem>
+                          ))}
+                        </CommandGroup>
+                      </CommandList>
+                    </Command>
                   </PopoverContent>
                 </Popover>
               </div>
@@ -415,35 +409,32 @@ export default function StateComparison() {
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-full p-0" align="start">
-                    {(Command as any) && (
-                      <Command as any>
-                        <CommandInput as any placeholder="Search languages..." />
-                        <CommandList as any>
-                          <CommandEmpty as any>No language found.</CommandEmpty>
-                          <CommandGroup as any>
-                            {Object.entries(languageData).map(([key, language]) => (
-                              <CommandItem
-                                as any
-                                key={key}
-                                value={key}
-                                onSelect={(currentValue) => {
-                                  setFirstLanguage(currentValue)
-                                  setShowComparison(false)
-                                }}
-                              >
-                                <div className="flex items-center gap-3">
-                                  <span className="text-xl font-semibold">{language.icon}</span>
-                                  <span>{language.name}</span>
-                                </div>
-                                <Check
-                                  className={cn("ml-auto h-4 w-4", firstLanguage === key ? "opacity-100" : "opacity-0")}
-                                />
-                              </CommandItem>
-                            ))}
-                          </CommandGroup>
-                        </CommandList>
-                      </Command>
-                    )}
+                    <Command>
+                      <CommandInput placeholder="Search languages..." />
+                      <CommandList>
+                        <CommandEmpty>No language found.</CommandEmpty>
+                        <CommandGroup>
+                          {Object.entries(languageData).map(([key, language]) => (
+                            <CommandItem
+                              key={key}
+                              value={key}
+                              onSelect={(currentValue) => {
+                                setFirstLanguage(currentValue)
+                                setShowComparison(false)
+                              }}
+                            >
+                              <div className="flex items-center gap-3">
+                                <span className="text-xl font-semibold">{language.icon}</span>
+                                <span>{language.name}</span>
+                              </div>
+                              <Check
+                                className={cn("ml-auto h-4 w-4", firstLanguage === key ? "opacity-100" : "opacity-0")}
+                              />
+                            </CommandItem>
+                          ))}
+                        </CommandGroup>
+                      </CommandList>
+                    </Command>
                   </PopoverContent>
                 </Popover>
               </div>
@@ -467,35 +458,32 @@ export default function StateComparison() {
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-full p-0" align="start">
-                    {(Command as any) && (
-                      <Command as any>
-                        <CommandInput as any placeholder="Search languages..." />
-                        <CommandList as any>
-                          <CommandEmpty as any>No language found.</CommandEmpty>
-                          <CommandGroup as any>
-                            {Object.entries(languageData).map(([key, language]) => (
-                              <CommandItem
-                                as any
-                                key={key}
-                                value={key}
-                                onSelect={(currentValue) => {
-                                  setSecondLanguage(currentValue)
-                                  setShowComparison(false)
-                                }}
-                              >
-                                <div className="flex items-center gap-3">
-                                  <span className="text-xl font-semibold">{language.icon}</span>
-                                  <span>{language.name}</span>
-                                </div>
-                                <Check
-                                  className={cn("ml-auto h-4 w-4", secondLanguage === key ? "opacity-100" : "opacity-0")}
-                                />
-                              </CommandItem>
-                            ))}
-                          </CommandGroup>
-                        </CommandList>
-                      </Command>
-                    )}
+                    <Command>
+                      <CommandInput placeholder="Search languages..." />
+                      <CommandList>
+                        <CommandEmpty>No language found.</CommandEmpty>
+                        <CommandGroup>
+                          {Object.entries(languageData).map(([key, language]) => (
+                            <CommandItem
+                              key={key}
+                              value={key}
+                              onSelect={(currentValue) => {
+                                setSecondLanguage(currentValue)
+                                setShowComparison(false)
+                              }}
+                            >
+                              <div className="flex items-center gap-3">
+                                <span className="text-xl font-semibold">{language.icon}</span>
+                                <span>{language.name}</span>
+                              </div>
+                              <Check
+                                className={cn("ml-auto h-4 w-4", secondLanguage === key ? "opacity-100" : "opacity-0")}
+                              />
+                            </CommandItem>
+                          ))}
+                        </CommandGroup>
+                      </CommandList>
+                    </Command>
                   </PopoverContent>
                 </Popover>
               </div>
@@ -542,35 +530,32 @@ export default function StateComparison() {
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-full p-0" align="start">
-                    {(Command as any) && (
-                      <Command as any>
-                        <CommandInput as any placeholder="Search social structures..." />
-                        <CommandList as any>
-                          <CommandEmpty as any>No social structure found.</CommandEmpty>
-                          <CommandGroup as any>
-                            {Object.entries(socialData).map(([key, social]) => (
-                              <CommandItem
-                                as any
-                                key={key}
-                                value={key}
-                                onSelect={(currentValue) => {
-                                  setFirstSocial(currentValue)
-                                  setShowComparison(false)
-                                }}
-                              >
-                                <div className="flex items-center gap-3">
-                                  <span className="text-2xl">{social.icon}</span>
-                                  <span>{social.name}</span>
-                                </div>
-                                <Check
-                                  className={cn("ml-auto h-4 w-4", firstSocial === key ? "opacity-100" : "opacity-0")}
-                                />
-                              </CommandItem>
-                            ))}
-                          </CommandGroup>
-                        </CommandList>
-                      </Command>
-                    )}
+                    <Command>
+                      <CommandInput placeholder="Search social structures..." />
+                      <CommandList>
+                        <CommandEmpty>No social structure found.</CommandEmpty>
+                        <CommandGroup>
+                          {Object.entries(socialData).map(([key, social]) => (
+                            <CommandItem
+                              key={key}
+                              value={key}
+                              onSelect={(currentValue) => {
+                                setFirstSocial(currentValue)
+                                setShowComparison(false)
+                              }}
+                            >
+                              <div className="flex items-center gap-3">
+                                <span className="text-2xl">{social.icon}</span>
+                                <span>{social.name}</span>
+                              </div>
+                              <Check
+                                className={cn("ml-auto h-4 w-4", firstSocial === key ? "opacity-100" : "opacity-0")}
+                              />
+                            </CommandItem>
+                          ))}
+                        </CommandGroup>
+                      </CommandList>
+                    </Command>
                   </PopoverContent>
                 </Popover>
               </div>
@@ -594,35 +579,32 @@ export default function StateComparison() {
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-full p-0" align="start">
-                    {(Command as any) && (
-                      <Command as any>
-                        <CommandInput as any placeholder="Search social structures..." />
-                        <CommandList as any>
-                          <CommandEmpty as any>No social structure found.</CommandEmpty>
-                          <CommandGroup as any>
-                            {Object.entries(socialData).map(([key, social]) => (
-                              <CommandItem
-                                as any
-                                key={key}
-                                value={key}
-                                onSelect={(currentValue) => {
-                                  setSecondSocial(currentValue)
-                                  setShowComparison(false)
-                                }}
-                              >
-                                <div className="flex items-center gap-3">
-                                  <span className="text-2xl">{social.icon}</span>
-                                  <span>{social.name}</span>
-                                </div>
-                                <Check
-                                  className={cn("ml-auto h-4 w-4", secondSocial === key ? "opacity-100" : "opacity-0")}
-                                />
-                              </CommandItem>
-                            ))}
-                          </CommandGroup>
-                        </CommandList>
-                      </Command>
-                    )}
+                    <Command>
+                      <CommandInput placeholder="Search social structures..." />
+                      <CommandList>
+                        <CommandEmpty>No social structure found.</CommandEmpty>
+                        <CommandGroup>
+                          {Object.entries(socialData).map(([key, social]) => (
+                            <CommandItem
+                              key={key}
+                              value={key}
+                              onSelect={(currentValue) => {
+                                setSecondSocial(currentValue)
+                                setShowComparison(false)
+                              }}
+                            >
+                              <div className="flex items-center gap-3">
+                                <span className="text-2xl">{social.icon}</span>
+                                <span>{social.name}</span>
+                              </div>
+                              <Check
+                                className={cn("ml-auto h-4 w-4", secondSocial === key ? "opacity-100" : "opacity-0")}
+                              />
+                            </CommandItem>
+                          ))}
+                        </CommandGroup>
+                      </CommandList>
+                    </Command>
                   </PopoverContent>
                 </Popover>
               </div>
