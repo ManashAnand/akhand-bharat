@@ -1,6 +1,5 @@
 "use client";
 import StateComparison from "@/components/state-comparison"
-import { GitaQuote } from "@/components/gita-quote"
 
 
 export default function Home() {
