@@ -12,7 +12,10 @@ import {
 import { cn } from "@/lib/utils"
 import { Button } from "./ui/button"
 import { stateData, languageData, socialData, comparisonTypes } from "@/data/cultureData"
-
+import {
+  TwitterShareButton,
+  TwitterIcon,
+} from 'next-share'
 // TypeScript interfaces for our data types
 interface StateData {
   icon: string;
@@ -33,77 +36,9 @@ interface SocialData {
 }
 
 // Card components for displaying comparison results
-const StateCard = ({ state }: { state: StateData }) => (
-  <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden border border-blue-200 dark:border-blue-800">
-    <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-6 flex items-center gap-4">
-      <div className="bg-white dark:bg-slate-800 w-16 h-16 rounded-full flex items-center justify-center text-3xl">
-        {state.icon}
-      </div>
-      <h3 className="text-2xl font-bold text-white">{state.name}</h3>
-    </div>
-    <div className="p-6">
-      <p>Information about {state.name} would go here. This is a placeholder for actual data.</p>
-      <div className="mt-4 grid grid-cols-2 gap-4">
-        <div className="bg-blue-50 dark:bg-blue-900/30 p-3 rounded-lg">
-          <h4 className="font-medium text-blue-700 dark:text-blue-300">Capital</h4>
-          <p className="text-gray-700 dark:text-gray-300">Capital City</p>
-        </div>
-        <div className="bg-blue-50 dark:bg-blue-900/30 p-3 rounded-lg">
-          <h4 className="font-medium text-blue-700 dark:text-blue-300">Population</h4>
-          <p className="text-gray-700 dark:text-gray-300">Population data</p>
-        </div>
-      </div>
-    </div>
-  </div>
-)
 
-const LanguageCard = ({ language }: { language: LanguageData }) => (
-  <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden border border-indigo-200 dark:border-indigo-800">
-    <div className="bg-gradient-to-r from-blue-500 to-indigo-500 p-6 flex items-center gap-4">
-      <div className="bg-white dark:bg-slate-800 w-16 h-16 rounded-full flex items-center justify-center text-3xl">
-        <span className="text-xl font-semibold">{language.icon}</span>
-      </div>
-      <h3 className="text-2xl font-bold text-white">{language.name}</h3>
-    </div>
-    <div className="p-6">
-      <p>Information about {language.name} language would go here. This is a placeholder for actual data.</p>
-      <div className="mt-4 grid grid-cols-2 gap-4">
-        <div className="bg-indigo-50 dark:bg-indigo-900/30 p-3 rounded-lg">
-          <h4 className="font-medium text-indigo-700 dark:text-indigo-300">Family</h4>
-          <p className="text-gray-700 dark:text-gray-300">Language family</p>
-        </div>
-        <div className="bg-indigo-50 dark:bg-indigo-900/30 p-3 rounded-lg">
-          <h4 className="font-medium text-indigo-700 dark:text-indigo-300">Speakers</h4>
-          <p className="text-gray-700 dark:text-gray-300">Number of speakers</p>
-        </div>
-      </div>
-    </div>
-  </div>
-)
 
-const SocialCard = ({ social }: { social: SocialData }) => (
-  <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden border border-green-200 dark:border-green-800">
-    <div className="bg-gradient-to-r from-green-500 to-teal-500 p-6 flex items-center gap-4">
-      <div className="bg-white dark:bg-slate-800 w-16 h-16 rounded-full flex items-center justify-center text-3xl">
-        {social.icon}
-      </div>
-      <h3 className="text-2xl font-bold text-white">{social.name}</h3>
-    </div>
-    <div className="p-6">
-      <p>Information about {social.name} would go here. This is a placeholder for actual data.</p>
-      <div className="mt-4 grid grid-cols-2 gap-4">
-        <div className="bg-green-50 dark:bg-green-900/30 p-3 rounded-lg">
-          <h4 className="font-medium text-green-700 dark:text-green-300">Origin</h4>
-          <p className="text-gray-700 dark:text-gray-300">Historical origin</p>
-        </div>
-        <div className="bg-green-50 dark:bg-green-900/30 p-3 rounded-lg">
-          <h4 className="font-medium text-green-700 dark:text-green-300">Traditions</h4>
-          <p className="text-gray-700 dark:text-gray-300">Cultural traditions</p>
-        </div>
-      </div>
-    </div>
-  </div>
-)
+
 
 export default function StateComparison() {
   const [isLoading, setIsLoading] = useState(false)
@@ -370,15 +305,7 @@ export default function StateComparison() {
               </div>
             </div>
 
-            <div className="mt-8 flex justify-center">
-              <Button
-                onClick={handleCompare}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 rounded-full text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
-              >
-                Compare States
-                <ChevronRight className="w-5 h-5" />
-              </Button>
-            </div>
+            
           </div>
         </div>
       )}
@@ -489,15 +416,7 @@ export default function StateComparison() {
               </div>
             </div>
 
-            <div className="mt-8 flex justify-center">
-              <Button
-                onClick={handleCompare}
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-6 rounded-full text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
-              >
-                Compare Languages
-                <ChevronRight className="w-5 h-5" />
-              </Button>
-            </div>
+    
           </div>
         </div>
       )}
@@ -610,59 +529,12 @@ export default function StateComparison() {
               </div>
             </div>
 
-            <div className="mt-8 flex justify-center">
-              <Button
-                onClick={handleCompare}
-                className="bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white px-8 py-6 rounded-full text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
-              >
-                Compare Social Structures
-                <ChevronRight className="w-5 h-5" />
-              </Button>
-            </div>
+       
           </div>
         </div>
       )}
 
-      {showComparison && (
         <div id="comparison-results" className="mt-12 pt-4">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-amber-800 dark:text-amber-300">Comparison Results</h2>
-            <Button
-              onClick={resetComparison}
-              variant="outline"
-              className="border-amber-300 dark:border-amber-700 text-amber-700 dark:text-amber-300"
-            >
-              New Comparison
-            </Button>
-          </div>
-
-          {comparisonType === "states" && (
-            <div
-              className="grid grid-cols-1 md:grid-cols-2 gap-6 opacity-100 transform translate-y-0 transition-all duration-500"
-            >
-              <StateCard state={stateData[firstState] as StateData} />
-              <StateCard state={stateData[secondState] as StateData} />
-            </div>
-          )}
-
-          {comparisonType === "languages" && (
-            <div
-              className="grid grid-cols-1 md:grid-cols-2 gap-6 opacity-100 transform translate-y-0 transition-all duration-500"
-            >
-              <LanguageCard language={languageData[firstLanguage] as LanguageData} />
-              <LanguageCard language={languageData[secondLanguage] as LanguageData} />
-            </div>
-          )}
-
-          {comparisonType === "social" && (
-            <div
-              className="grid grid-cols-1 md:grid-cols-2 gap-6 opacity-100 transform translate-y-0 transition-all duration-500"
-            >
-              <SocialCard social={socialData[firstSocial] as SocialData} />
-              <SocialCard social={socialData[secondSocial] as SocialData} />
-            </div>
-          )}
-
           <div className="mt-8 flex justify-center">
             <Button
               className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-medium px-6 py-2 rounded-full shadow-md hover:shadow-lg transition-all"
@@ -677,10 +549,13 @@ export default function StateComparison() {
             <div className="mt-6 p-6 bg-white dark:bg-slate-800 rounded-lg shadow bg-gradient-to-r from-amber-100 to-amber-50 dark:from-amber-950 dark:to-amber-900 border border-amber-200 dark:border-amber-800">
               <h3 className="text-lg font-medium mb-4 text-amber-800 dark:text-amber-300">AI-Generated Comparison</h3>
               <div className="whitespace-pre-wrap text-gray-700 dark:text-gray-300">{response}</div>
+              <TwitterShareButton url={response.slice(0, 250) + "..."}>
+                <TwitterIcon size={32} round />
+              </TwitterShareButton>
             </div>
           )}
         </div>
-      )}
+      
     </div>
   )
 }
